@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Hello my name is Madhav Sharma">
+    <meta name="description" content="Hello my name is Madhav Sharma">
+    <meta name="keywords" content="html, css , js ">
+    <meta name="author" content="Madhav Sharma ">
+
+    <title>Basic google Form</title>
+    <style>
+        body{
+           background-color: violet;
+        }
+        .contact-section {
+  width: 100%;
+  max-width: 40rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 3rem 1rem;
+}
+
+.contact-intro > * + * {
+  margin-top: 1rem;
+}
+
+.contact-title {
+    display:flex ;
+    justify-content: center;
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  font-weight: 1200;
+}
+
+.contact-description {
+  color: black;
+}
+
+.form-group-container {
+  display: grid;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-label {
+  margin-bottom: 0.2rem;
+}
+
+.form-input,
+.form-textarea {
+  padding: 0.5rem;
+  border: 1px solid #e5e7eb;
+  display: flex;
+  height: 2.5rem;
+  width: 100%;
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+.form-input::placeholder,
+.form-textarea:focus-visible {
+  color: #6b7280;
+}
+
+.form-input:focus-visible,
+.form-textarea:focus-visible {
+  outline: 2px solid #2563eb;
+  outline-offset: 2px;
+}
+
+.form-textarea {
+  min-height: 120px;
+}
+
+.form-submit {
+  width: 100%;
+  margin-top: 1.2rem;
+  background-color: #3124ca;
+  color: #fff;
+  padding: 13px 5px;
+  border-radius: 0.375rem;
+}
+#mycanvas{
+    background-color: antiquewhite;
+}
+    </style>
+   
+</head>
+
+<body>
+    <section class="contact-section">
+  <div class="contact-intro">
+    <h1 class="contact-title">User Details and Contact</h1>
+    <h3 class="contact-description">
+      Fill out the form below and we'll get back to you as soon as possible.
+    </h3>
+  </div>
+
+  <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
+
+    <input type="hidden" name="access_key" value="f62a05b1-9cf9-4452-8e02-a2c8f8a56550" />
+    <input type="hidden" name="subject" value="New Contact Form Submission from Web3Forms" />
+    <input type="hidden" name="from_name" value="My Website" />
+     <!-- More custom ization options available in the docs: https://docs.web3forms.com  -->
+
+    <div class="form-group-container">
+      <div class="form-group">
+        <label for="name" class="form-label">Name</label>
+        <input id="name" name="name" class="form-input" placeholder="Your name" type="text" required autocomplete="on"/>
+      </div>
+      <div class="form-group">
+        <label for="email" class="form-label">Email</label>
+        <input id="email" name="email" class="form-input" placeholder="Your email" type="email" required/>
+      </div>
+      <div class="form-group">
+        <label for="phone" class="form-label">Phone</label>
+        <input id="phone" name="phone" class="form-input" placeholder="+1 (234) 56789" type="text" />
+      </div>
+      <div class="form-group">
+        <label for="message" class="form-label">Message</label>
+        <textarea class="form-textarea" id="message" name="message" placeholder="Your message"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="gender" class="form-label">Gender</label>
+        <input type="text" placeholder="Gender" class="form-input" id="gender" name="gender" list="mydata"/>
+        <datalist id="mydata">
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+        </datalist>
+        <div class="form-group">
+         <label for="city" class="form-label" >City</label>
+       
+        <select name="city" id="city" class="form-input">
+            <option value="Jaipur">Jaipur</option>
+            <option value="Delhi">Delhi</option>
+            <option value="Pune">Pune</option>
+            <option value="Mumbai">Mumbai</option>
+            <option value="Goa">Goa</option>
+            <option value="Gujrat">Gujrat</option>
+        </select>
+        </div>
+      </div>
+    </div>
+    <button class="form-submit" type="submit" onclick="alertme()" id="btnalert">Send Message</button>
+    <button class="form-submit" type="reset">Reset</button>
+  </form>
+  <!-- <h3 id="output" onclick="AskQ()">Ask A question</h3> -->
+<button id="ask" class="form-submit" onclick="AskQ()">Please Ask the Question</button>
+</section>
+<!-- <canvas id="mycanvas" height="400" width="400"></canvas> -->
+ <!-- <script>
+     document.write("Hello kaise ho ");
+    function AskQ(){
+      var b= prompt("What is your Name");
+      var a=  document.getElementById("output");
+      a.innerHTML= "Hello  " + b + " Welcome" ;
+     
+    } 
+    // window.onload=function(){
+    //    document.getElementById('btnalert').addEventListener('click',alertme,false)
+    // }
+    //     function alertme(){
+    //         alert("Wish You a Very Happy Birthday");
+    //     }
+
+    //     console.log("Hello World!!!")
+    //     // window.onload=function(){
+    //     //     var canvas=document.getElementById('mycanvas');
+    //     //     var context=canvas.getContext("2d");
+    //     //     context.fillStyle="#0000CC";
+    //     //     context.fillRect(50,50,100,100);
+    //     //     context.moveTo(250,70);
+    //     //     context.lineTo(580,300);
+    //     //     context.stroke();
+    //     // }
+    // </script>-->
+    <div id="output">Hello world</div>
+    
+    <button onclick="alert('hello 1');">Click Me</button>
+    <script>
+
+var a = prompt("What is you name?");
+var b = document.getElementById("output");
+b.innerHTML = "Hello " + a + " welcome to my page!";
+
+    </script>
+</body>
+</html>
